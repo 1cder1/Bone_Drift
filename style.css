@@ -1,0 +1,144 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    background-image: url('clouds.png'); /* Path to your background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Scale the background to cover the canvas */
+    background-position: center center; /* Initial position of the background */
+  }
+
+  #game-title-image {
+    width: 300px; /* Adjust width to fit your layout */
+    height: auto; /* Maintain aspect ratio */
+    animation: titleAnimation 2s infinite ease-in-out;
+
+    /* Centering Styles */
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfect centering */
+}
+
+@keyframes titleAnimation {
+    0%, 100% {
+        transform: translate(-50%, -50%); /* Neutral centered position */
+    }
+    50% {
+        transform: translate(-50%, -60%); /* Slight upward movement */
+    }
+}
+
+  #start-button {
+    width: 230px; /* Button width */
+    height: 100px; /* Button height */
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: url('playButtonNH.png') no-repeat center/contain; /* Default image */
+    cursor: pointer; /* Pointer cursor */
+    position: absolute; /* Absolute positioning */
+    bottom: 20%; /* Move the button further down the page */
+    left: 50%; /* Center the button horizontally */
+    transform: translate(-50%, 0); /* Adjust centering */
+    animation: idleAnimation 2s infinite ease-in-out; /* Idle animation */
+  }
+  
+  #start-button:hover {
+    background: url('playButtonH.png') no-repeat center/contain; /* Change image on hover */
+  }
+  
+  /* Define the idle animation */
+  @keyframes idleAnimation {
+    0%, 100% {
+      transform: translate(-50%, 0); /* Neutral position */
+    }
+    50% {
+      transform: translate(-50%, -10px); /* Slight upward movement */
+    }
+  }
+  
+  #death-screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+#game-over-title img {
+  width: 300px; /* Adjust width to fit your layout */
+  height: auto; /* Maintain aspect ratio */
+  animation: titleAnimation 2s infinite ease-in-out;
+
+  /* Centering Styles */
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Add spacing */
+}
+
+#middle-img {
+  width: 50px; /* Adjust width to fit your layout */
+  height: 50px; /* Maintain aspect ratio */
+
+  /* Centering Styles */
+
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+#retry-button {
+  width: 230px; /* Define the button width */
+  height: 100px; /* Define the button height */
+  padding: 0;
+  margin: 0;
+  background: url('retryButtonNH.png') no-repeat center/contain; /* Button background */
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 15%; /* Adjust vertical position */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, 0); /* Perfect centering */
+  z-index: 10; /* Ensure it's above other elements */
+  animation: idleAnimation 2s infinite ease-in-out; 
+}
+
+#retry-button:hover {
+  background: url('retryButtonH.png') no-repeat center/contain; /* Change image on hover */
+}
+
+#high-score-display {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#game-message-image {
+  width: 210px; /* Adjust width to fit your layout */
+  height: auto; /* Maintain aspect ratio */
+  
+  top: 60px;
+  right: 50px;
+  transform: translate(-50%, -50%); 
+
+  animation: moveBackAndForth 0.7s infinite alternate;
+}
+
+@keyframes moveBackAndForth {
+  0% {
+    transform: rotate(-10deg) translate(140px, -100px);
+  }
+  100% {
+    transform: rotate(0deg) translate(140px, -100px);
+  }
+}

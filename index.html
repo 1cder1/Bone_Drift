@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Heather 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="head.png" type="image/png">
+</head>
+<body style="margin: 0; overflow: hidden; background: black center/cover no-repeat;">
+    <!-- Title Screen -->
+    <div id="title-screen" style="display: flex; flex-direction: column; justify-content: center; align-items: center; position: absolute; width: 100%; height: 100%;">
+      <audio id="myAudio" src="titleSong.mp3"></audio> 
+      <audio id="themeAudio" src="BoneDriftSong.mp3"></audio>  
+      <button id="start-button"></button>
+      <img id="game-title-image" src="TitleA.png" alt="Title Image">
+      <img id="game-message-image" src="lilMessage.png" alt="lilMessage Image">
+    </div>
+    
+    
+    <div id="death-screen" style="display: none;">
+        <!-- Game Over Title-->
+        <h1 id="game-over-title"><img id="game-over-title" src="gameOverT.png" alt="Game Over Image">
+        </h1>
+        <!-- Middle Image-->
+         <p id="high-score-display">High Score: 0</p>
+        <img id="game-over-title" src="deadCat.png" alt="Game Over Image">
+        <button id="retry-button"></button>
+    </div>
+
+    <!-- Game Canvas -->
+    <canvas id="game" width="570" height="790"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/matter-js"></script>
+    <script src="script.js"></script>
+    <script src="titleScreen.js"></script>
+</body>
+</html>
